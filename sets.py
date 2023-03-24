@@ -119,4 +119,12 @@ def ex3():
     a = {x for x in 'abracadabra' if x not in 'abc'}
     print('120', 'a', a)
     
+# ex3()
+
+def ex3():
+    A = set(map(int, '1 3 5 7 9'.split()))
+    B = set(map(int, '0 2 4 6 8'.split()))
+    print(A, B)
+    print(A.update(B))
+    
 ex3()

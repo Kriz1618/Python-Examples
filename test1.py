@@ -157,7 +157,7 @@ def print_rangoli(size):
         l = list(reversed([alph[s] for s in range(size-i, size)]))
         print('-'.join(l+ l[: i*2-3][:i-1][::-1]).center(s, '-'))
 
-rangoli(6)
+# rangoli(6)
 # print_rangoli(6)
 
 from itertools import permutations
@@ -196,5 +196,5 @@ def polar(num):
     print(r)
     print(phi)
 
-polar_coordinates(1+2j)
-polar(1+2j)    
+# polar_coordinates(1+2j)
+# polar(1+2j)    

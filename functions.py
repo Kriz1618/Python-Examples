@@ -143,8 +143,8 @@ def combined_example(pos_only, /, standard, *, kwd_only):
 # kwd_only_arg(3) # will raice an error
 # kwd_only_arg(arg=3)
 
-# combined_example(1, 2, 3) # will raice an error
-# combined_example(1, 2, kwd_only=3)
+combined_example(1, 2, 3) # will raice an error
+combined_example(1, 2, kwd_only=3)
 # combined_example(pos_only=1, standard=2, kwd_only=3) # will raice an error
 
 def foo(name, **kwds):
@@ -153,9 +153,10 @@ def foo(name, **kwds):
 # foo(1, **{'name': 2}) # will raice an error
 
 def foo(name, /, **kwds):
+    print('156', 'name', name)
     return 'name' in kwds
 
-print(foo(1, **{'name': 2}))
+# print(foo(1, **{'name': 2}))
 
 def write_multiple_items(file, separator, *args):
     file.write(separator.join(args))
@@ -182,12 +183,12 @@ d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
 def make_incrementor(n):
    return lambda x: x + n
 
-f = make_incrementor(42)
+# f = make_incrementor(42)
 # print(f(0))
 # print(f(1))
 
-pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
-pairs.sort(key=lambda pair: pair[1])
+# pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+# pairs.sort(key=lambda pair: pair[1])
 # print('191', 'pairs', pairs)
 
 def my_function():
@@ -204,4 +205,44 @@ def f(ham: str, eggs: str = 'eggs') -> str:
     print("Arguments:", ham, eggs)
     return ham + ' and ' + eggs
 
-f('spam')
+# f('spam')
+
+def total_fruits(**kwargs):
+    print(kwargs, type(kwargs))
+
+
+# total_fruits(banana=5, mango=7, apple=8)
+
+def total_fruits(**fruits):
+    print('216', 'fruits', fruits)
+    total = 0
+    for amount in fruits.values():
+        total += amount
+    return total
+
+
+# print(total_fruits(banana=5, mango=7, apple=8))
+# print(total_fruits(banana=5, mango=7, apple=8, oranges=10))
+# print(total_fruits(banana=5, mango=7),'\n')
+
+def add(*numbers):
+    print('227', 'numbers', numbers)
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+
+# print(add(2, 3))
+# print(add(2, 3, 5))
+# print(add(2, 3, 5, 7))
+# print(add(2, 3, 5, 7, 9))
+
+def hi():
+    return "hi yasoob!"
+
+def doSomethingBeforeHi(func):
+    print("I am doing some boring work before executing hi()")
+    print(func())
+
+# doSomethingBeforeHi(hi)

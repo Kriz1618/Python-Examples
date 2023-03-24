@@ -202,4 +202,37 @@ def del_st():
 
     del a[:]
     print('204', 'a', a)
-del_st()
+# del_st()
+
+def sort_by_str():
+    my_list = [42, 17, 99, 5, 23]
+    sorted_list = sorted(my_list, key=str)
+    print(sorted_list)
+    
+# sort_by_str()
+
+def custom_objects_sort():
+    class Person:
+        def __init__(self, name, age, height):
+            self.name = name
+            self.age = age
+            self.height = height
+
+        def __repr__(self):
+            return f"{self.name} ({self.age}) - {self.height} cm"
+    people = [Person("Alice", 25, 170), Person("Bob", 30, 180), Person("Charlie", 20, 160)]
+    sorted_people = sorted(people, key=lambda p: p.age)
+    print(sorted_people)
+
+    # sort by age using sort()
+    people.sort(key=lambda p: p.age)
+    print(people)
+    
+# custom_objects_sort()
+
+employes = [{ "name": "Jonh Doe", "income": 15624 }, { "name": "Lian Doe", "income": 95624 }, { "name": "Jonh Doe3", "income": 18624 }]
+
+def sorted_by(list: list, field: str) -> list:
+    return sorted(list, key=lambda f: f[field])
+
+print(sorted_by(employes, 'income'))

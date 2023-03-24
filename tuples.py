@@ -3,6 +3,7 @@ print('2', 'tuple1', tuple1)
 
 tuple2 = (1, 2, 3)
 print('5', 'tuple2', tuple2)
+print('6', 'tuple2.index', list(tuple2))
 
 tuple3 = (100, 'Jonh Doe', 2100.00, 'Production')
 print('8', 'tuple3 with diferent types', tuple3)

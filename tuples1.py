@@ -19,7 +19,7 @@ def ex1():
     a, b, c = t
     print(f'unpacking {a, b, c}')
     
-ex1()
+# ex1()
 
 def ex2():
     empty = ()
@@ -31,3 +31,25 @@ def ex2():
     print('28', 'singleton', singleton)
     
 # ex2()
+
+def ex3():
+    countries = set()
+    countries.add('UK')
+    countries.add('France')
+    countries.add('UK')
+    countries.add('US')
+    
+    print(countries, len(countries))
+    
+# ex3()
+
+from itertools import combinations_with_replacement as comb
+
+def string_combinations(chain, zise):
+    sorted_chain = sorted(chain)
+    li = comb(sorted_chain, zise)
+
+    for i in li:
+        print(''.join(i))
+    
+string_combinations('america', 2)
