@@ -93,11 +93,12 @@ def ex2():
     print('93', 'list(tel)', list(tel))
 
     print('95', 'sorted(tel)', sorted(tel))
+    print('96', 'sorted(tel.items())', sorted(tel.items()))
 
     print('97', 'guido in tel', 'guido' in tel)
 
     print('jack' not in tel)
-# ex2()
+ex2()
 
 def ex3():
     print(dict([('sape', 4139), ('guido', 4127), ('jack', 4098)]))
@@ -106,7 +107,7 @@ def ex3():
     
     print(dict(sape=4139, guido=4127, jack=4098))
     
-ex3()
+# ex3()
 
 def looping():
     knights = {'gallahad': 'the pure', 'robin': 'the brave'}
@@ -151,3 +152,17 @@ def ex4():
             filtered_data.append(value)
 
     print('153', 'filtered_data', filtered_data)
+    
+
+def ex5():
+    from collections import Counter
+
+    _, groups = int(input()), input().split()
+    num=Counter(groups)
+
+    for i,j in num.items():
+        if j==1:
+            print(int(i))
+    # 5
+    # 1 2 3 6 5 4 4 2 5 3 6 1 6 5 3 2 4 1 2 5 1 4 3 6 8 4 3 1 5 6 2 
+    # 8

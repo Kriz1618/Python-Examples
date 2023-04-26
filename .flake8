@@ -1,0 +1,4 @@
+[flake8]
+exclude = venv,__init__.py
+
+pip install flake8

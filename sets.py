@@ -127,4 +127,15 @@ def ex3():
     print(A, B)
     print(A.update(B))
     
-ex3()
+# ex3()
+
+
+def ex4():
+    A = {1, 2, 3, 5, 6}
+    B = {9, 8, 5, 6, 3, 2, 1, 4, 7}
+    
+    print(A - A.intersection(B))
+    print('138', ' B.__sub__(A)',  A.issubset(B))
+    x = +4.50
+    print(isinstance(x, float), float(5), x)
+ex4()
