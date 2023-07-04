@@ -104,4 +104,10 @@ def exm3():
     import math
     print('The value of pi is approximately %5.3f.' % math.pi)
     
-exm3()
+# exm3()
+
+def exm4(name: str, last_name: str) -> None:
+    full_name = name.title() + ' ' + last_name.title()
+    print(full_name)
+    
+exm4('kriz', 'MARleS')
